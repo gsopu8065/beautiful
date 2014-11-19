@@ -1,0 +1,12 @@
+{
+  "name": "angular-bootstrap",
+  "_cacheHeaders": {
+    "Last-Modified": "Sun, 16 Nov 2014 21:23:23 GMT",
+    "Content-Length": "61659",
+    "Content-Type": "application/javascript; charset=utf-8"
+  },
+  "main": "index.js",
+  "_source": "https://angular-ui.github.com/bootstrap/ui-bootstrap-tpls-0.2.0.js",
+  "_target": "*",
+  "_originalSource": "https://angular-ui.github.com/bootstrap/ui-bootstrap-tpls-0.2.0.js"
+}
