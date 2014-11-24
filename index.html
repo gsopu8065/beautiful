@@ -1,4 +1,59 @@
 <html>
-   Hello world
+   <head>
+   	  <title>Champions list</title>
 
+   	   <meta name="viewport" content="width=device-width, initial-scale=1">
+   	  <link rel="stylesheet" href="js/libs/bootstrap/dist/css/bootstrap.css" />   	 
+   </head>
+
+   <body ng-app="beautiful" ng-controller="DriversController">
+   
+   <div class"container"> 	
+   <div class="row">
+   <div class="col-xs-8">
+   <table class="table">
+    <thead>
+      <tr><th colspan="4">Drivers Championship Standings</th></tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="driver in driversList" ng-click="updateDisplay($index)">
+        <td>{{$index + 1}}</td>
+        <td>
+          {{driver.Driver.givenName}}&nbsp;{{driver.Driver.familyName}}
+        </td>
+        <td>{{driver.Constructors[0].name}}</td>
+        <td>{{driver.points}}</td>
+      </tr>
+    </tbody>
+   </table> 
+	</div>
+	<div ng-show="displayObject.driverId" class="col-xs-4">
+		<h4> Driver information </h4> <br/>
+    <b> Driver ID: </b> {{displayObject.driverId}} <br/>
+    <b> First Name: </b> {{displayObject.givenName}} <br/>
+    <b> Last Name: </b> {{displayObject.familyName}} <br/>
+    <b> Date of birth: </b> {{displayObject.dateOfBirth}} <br/>
+    <b> Nationality: </b> {{displayObject.nationality}} <br/>
+    <br/>
+    <img src="{{nationalFlagURL}}" class="img-thumbnail" width="200" height="200"/>
+	</div>
+	</div>
+	</div>
+
+
+   	<!-- add libraries -->
+    <script src="js/libs/jquery/jquery.js"></script>
+    <script src="js/libs/jquery.cookie/jquery.cookie.js"></script>
+    <script src="js/libs/x2js/xml2json.js"></script>
+    <script src="js/libs/angular/angular.js"></script>
+    <script src="js/libs/angular-resource/angular-resource.js"></script>
+    <script src="js/libs/angular-bootstrap/index.js"></script>
+
+    <!-- add built-in functionalities -->
+    <script src="js/app/initApp.js"></script>
+    <script src="js/services/driversService.js"></script>
+    <script src="js/controllers/driversController.js"></script>
+ 	
+ 
+   </body>
 </html>
