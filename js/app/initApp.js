@@ -1,1 +1,1 @@
-var beautiful = angular.module("beautiful",[]);
+var beautiful = angular.module("beautiful", ['ngRoute']);

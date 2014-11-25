@@ -1,5 +1,5 @@
-beautiful.controller("DriversController",["$scope","$rootScope","$log","DriversService",
-	function($scope,$rootScope,$log,DriversService){
+beautiful.controller("DriversController",["$scope","$rootScope","$log","$location","DriversService",
+	function($scope,$rootScope,$log,$location,DriversService){
 		
 
 		DriversService.getDrivers().success(function(data){
@@ -16,6 +16,21 @@ beautiful.controller("DriversController",["$scope","$rootScope","$log","DriversS
 				$scope.nationalFlagURL = data.responseData.results[0].url;
 				console.log($scope.nationalFlagURL);
 			});
-		}		
+		}
+
+		$scope.goToDetails = function(i){
+			$location.path("drivers/"+i);			
+		}
+
+
+
+
+	}]).
+	controller("DriverController",["$scope","$rootScope","$log","$routeParams","DriversService",
+
+	function($scope,$rootScope,$log,$routeParams,DriversService){		
+
+			$scope.id = $routeParams.id;
+			$scope.displayObject = $scope.driversList[i].Driver;
 
 	}]);
